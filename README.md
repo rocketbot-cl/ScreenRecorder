@@ -3,6 +3,8 @@ Screen recording module
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/ScreenRecorder/master/example/recorder.png)
 
+![alt text](https://raw.githubusercontent.com/rocketbot-cl/ScreenRecorder/master/example/recorder2.png)
+
 <h2>Dependencies</h2>
 
 <ul>
