@@ -51,10 +51,10 @@ if module == "start":
     sleep(2)
     options = " -f gdigrab -framerate 30 -i desktop " + output
     if sys.platform == "win32":
-        run_ = ffmpegW32 + ' -y -f gdigrab -framerate 30 -i desktop  -vcodec libx264 "'+ output + '"'
+        run_ = f'"{ffmpegW32}" -y -f gdigrab -framerate 30 -i desktop -vcodec libx264 -crf 20 -pix_fmt yuv420p -an "{output}"'
         p = subprocess.Popen(run_, shell = True, stdin=PIPE)
     if sys.platform == "win64":
-        run_ = ffmpegW +  ' -y -f gdigrab -framerate 30 -i desktop -f dshow -vcodec libx264 "'+ output + '"'
+        run_ = f'"{ffmpegW}" -y -f gdigrab -framerate 30 -i desktop -f dshow -vcodec libx264 -crf 20 -pix_fmt yuv420p -an "{output}"'
         p = subprocess.Popen(run_, shell = True, stdin=PIPE)
     if sys.platform == "darwin":
         run_ = ffmpegMac +  ' -y -f avfoundation -framerate 30 -i "1" -pix_fmt yuyv422 -vcodec libx264 "'+ output + '"'
